@@ -1,7 +1,7 @@
 ﻿using POO.ContentContext;
+
 internal class Program
 {
-    private static object career;
 
     private static void Main(string[] args)
     {
@@ -21,6 +21,7 @@ internal class Program
             Console.WriteLine(article.Url);
         }
         Console.WriteLine("___________________________");
+        Console.WriteLine("");
 
         var courses = new List<Course>();
 
@@ -41,18 +42,21 @@ internal class Program
             new CarrerItem  (2, "OOP", "",coursesPoo2 ),
         };
 
+
+
         foreach (var career in careers)
         {
             Console.WriteLine(career.Title);
             foreach (var item in careersItem.OrderBy(x => x.Ordem))
             {
                 Console.WriteLine($"{item.Ordem} - {item.Title} ");
-                Console.WriteLine($"{item.Course.Title} - {item.Course.Level}");
+                Console.WriteLine($"{item.Course?.Title} - {item.Course?.Level}");
             }
         }
-
-
-
+        foreach (var notification in careers)
+        {
+            Console.WriteLine(notification.Title);
+        }
 
     }
 }
