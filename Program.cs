@@ -1,4 +1,5 @@
 ﻿using POO.ContentContext;
+using POO.SubscriptionContext;
 
 internal class Program
 {
@@ -57,6 +58,11 @@ internal class Program
         {
             Console.WriteLine(notification.Title);
         }
+
+        var payPalSubscription = new PaypalSubscription();
+        var student = new Stundent();
+
+        student.CreateSubscription(payPalSubscription);
 
     }
 }
